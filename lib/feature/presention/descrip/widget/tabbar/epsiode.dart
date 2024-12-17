@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:untitled1/feature/presention/descrip/widget/epsiode_card.dart';
 
 import '../../../../../core/model/movie_model.dart';
+import '../../../../../core/providers/movie_provider.dart';
 import '../../view_model/movie_view_model.dart';
 
 
@@ -13,8 +14,10 @@ class EpisodeTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final movieViewModel = Provider.of<MovieViewModel>(context);
-    final trailerUrl = movieViewModel.getTrailerUrl(movie);
+    final movieProvider = Provider.of<MovieProvider>(context);
+    final trailerUrl = movieProvider.movieTrailers[movie.id];
+    // final movieViewModel = Provider.of<MovieViewModel>(context);
+    // final trailerUrl = movieViewModel.getTrailerUrl(movie);
 
     if (trailerUrl == null || trailerUrl.isEmpty) {
       return const Center(

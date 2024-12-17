@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/feature/presention/auth/login_screen.dart';
 import 'package:untitled1/feature/presention/profile/widget/custom_list_tile.dart';
 import 'package:untitled1/feature/presention/profile/widget/profile_info.dart';
 
@@ -25,8 +26,21 @@ class ProfileScreen extends StatelessWidget {
           CustomListTile(Title: 'History', Leading: Icon(Icons.history), Trailing: Icon(Icons.arrow_forward_ios)),
           CustomListTile(Title: "My Subscription", Leading:  Icon(Icons.date_range), Trailing: Icon(Icons.arrow_forward_ios)),
           CustomListTile(Title: "Setting", Leading:  Icon(Icons.settings), Trailing: Icon(Icons.arrow_forward_ios)),
-          CustomListTile(Title: 'Logout', Leading:  Icon(Icons.logout), Trailing: Icon(Icons.arrow_forward_ios))
-        ],
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginScreen(),
+                ),
+              );
+            },
+            child: CustomListTile(
+              Title: 'Logout',
+              Leading: Icon(Icons.logout),
+              Trailing: Icon(Icons.arrow_forward_ios),
+            ),
+          ), ],
       ),
     );
   }

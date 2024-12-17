@@ -44,7 +44,7 @@ class DownloadScreen extends StatelessWidget {
         ),
 
         body: ListView.builder(
-                itemCount: 7,
+                itemCount: dp.downloadedMovie.length,
                 itemBuilder: (context, index) {
                   return DownloadCard(movie:  dp.downloadedMovie[index],);
                 },

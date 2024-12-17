@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/feature/presention/descrip/widget/about.dart';
 import 'package:untitled1/feature/presention/descrip/widget/epsiode_card.dart';
 import 'package:untitled1/feature/presention/descrip/widget/similiar.dart';
+import 'package:untitled1/feature/presention/descrip/widget/tabbar/epsiode.dart';
+import 'package:untitled1/feature/presention/descrip/widget/tabbar/review_tab.dart';
+import 'package:untitled1/feature/presention/descrip/widget/tabbar/similiar_tab.dart';
 
 import '../../../../../core/model/movie_model.dart';
 
@@ -22,7 +25,7 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
   void initState() {
     super.initState();
 
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -44,6 +47,7 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
               tabs: const <Widget>[
                 Tab(text: 'Episode'),
                 Tab(text: 'Similiar'),
+                Tab(text: 'Review'),
               ],
             ),
       
@@ -54,19 +58,9 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
             child: TabBarView(
               controller: _tabController,
               children:  [
-              Padding(
-                   padding: const EdgeInsets.all(2.0),
-                   child: ListView.builder(
-                   itemCount: 7,
-                      itemBuilder: (context, index) {
-                  return EpsiodeCard(movie: widget.movie,);
-                   })),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: ListView(
-                    physics: NeverScrollableScrollPhysics(),
-                      children:[ Similiar(movie: widget.movie,)]
-                ),),
+                EpisodeTab(movie: widget.movie,),
+               SimilarTab(movie: widget.movie),
+                ReviewsPage(),
               ],
             ),
           ),

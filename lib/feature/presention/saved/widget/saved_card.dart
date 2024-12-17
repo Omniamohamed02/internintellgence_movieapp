@@ -43,10 +43,6 @@ class SavedCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 1,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.sp,color: Colors.white),
             )),
-        Positioned(
-            left: 120.w,
-            top: 40.h,
-            child: Text('Action , Adventure',style: TextStyle(fontSize: 14.sp,color: Colors.white),)),
 
         Positioned(
             bottom: 20.h,

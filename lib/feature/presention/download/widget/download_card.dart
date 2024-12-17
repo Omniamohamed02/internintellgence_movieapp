@@ -47,7 +47,7 @@ class DownloadCard extends StatelessWidget {
         Positioned(
           left: 120.w,
             top: 40.h,
-            child: Text('${movie.genres}',style: TextStyle(fontSize: 14.sp,color: Colors.white),)),
+            child: Text('${movie.runtimeType}',style: TextStyle(fontSize: 14.sp,color: Colors.white),)),
         
          Positioned(
            bottom: 20.h,

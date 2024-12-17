@@ -66,7 +66,7 @@ class CustomImage extends StatelessWidget {
                  child: Row(
                    children: [
                      IconButton(onPressed: (){
-                       onSaveMovie;
+                       onSaveMovie();
                      }, icon: Icon(Icons.bookmark,color: Colors.white,)),
                      IconButton(onPressed: (){}, icon: Icon(Icons.share,color: Colors.white,))
                    ],

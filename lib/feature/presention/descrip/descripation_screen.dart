@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import 'package:untitled1/feature/presention/descrip/widget/custom_image.dart';
@@ -48,7 +49,8 @@ class _DescripationScreenState extends State<DescripationScreen> {
           RowButtons(movie: widget.movie ),
           MovieDescription(description: widget.movie.description, ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height:1000.h,
+            // height: MediaQuery.of(context).size.height * 0.7,
             width: double.infinity,
             child: CustomTabs(movie: widget.movie),
           ),

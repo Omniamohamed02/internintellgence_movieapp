@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
 
@@ -28,7 +29,7 @@ Widget GenreCard(BuildContext context, String title, int genreId) {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           title,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style:  TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
         ),
       ),
       GridView.builder(
@@ -56,20 +57,20 @@ Widget GenreCard(BuildContext context, String title, int genreId) {
               children: [
                 movie.posterPath != null
                     ? ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(8.0.r),
                   child: Image.network(
                     'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                    height:150,
+                    height:150.h,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
                 )
                     : Container(
-                  height: 100,
+                  height: 100.h,
                   color: Colors.grey,
                   child: const Icon(Icons.movie, size: 50),
                 ),
-                const SizedBox(height: 8),
+
 
               ],
             ),

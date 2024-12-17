@@ -64,10 +64,11 @@ class _ReviewsPageState extends State<ReviewsPage> {
             ),
             SizedBox(height: 10.h),
             TextField(
+              style:TextStyle(color: Colors.white54),
               controller: nameController,
               decoration: InputDecoration(
                 labelText: "Your Name",
-                fillColor: Colors.white,
+                labelStyle: TextStyle(color: Colors.white54),
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.r),
@@ -94,10 +95,11 @@ class _ReviewsPageState extends State<ReviewsPage> {
             ),
             SizedBox(height: 10.h),
             TextField(
+              style:TextStyle(color: Colors.white),
               controller: reviewController,
               decoration: InputDecoration(
                 labelText: "Your Review",
-                fillColor:Colors.white,
+                labelStyle: TextStyle(color: Colors.white),
                 prefixIcon: Icon(Icons.edit),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.r),
@@ -115,7 +117,7 @@ class _ReviewsPageState extends State<ReviewsPage> {
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
-                child: Text("Submit"),
+                child: Text("Submit",style: TextStyle(color: Colors.white),),
               ),
             ),
           ],
@@ -158,6 +160,7 @@ class _ReviewsPageState extends State<ReviewsPage> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16.sp,
+                          color: Colors.white
                         ),
                       ),
                       RatingBarIndicator(
@@ -175,7 +178,7 @@ class _ReviewsPageState extends State<ReviewsPage> {
                   SizedBox(height: 8.h),
                   Text(
                     review['review'],
-                    style: TextStyle(fontSize: 14.sp, color: Colors.black87),
+                    style: TextStyle(fontSize: 14.sp, color: Colors.white),
                   ),
                 ],
               ),

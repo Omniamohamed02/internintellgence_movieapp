@@ -52,7 +52,8 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
             ),
       
           Container(
-            height: MediaQuery.of(context).size.height * 0.7,
+            height:1000.h,
+            // height: MediaQuery.of(context).size.height * 0.7,
             width: double.infinity,
             color:  Color(0xFF070F2B),
             child: TabBarView(

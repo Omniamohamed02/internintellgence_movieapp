@@ -24,7 +24,7 @@ class  SimiliarCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0.r),
             child: Image.network(
               'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-              height: 200.h,
+              height: 150.h,
               width: double.infinity,
               fit: BoxFit.cover,
             ),

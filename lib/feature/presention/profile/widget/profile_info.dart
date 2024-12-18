@@ -17,13 +17,13 @@ class ProfileInfo extends StatelessWidget {
            ),
            child: CircleAvatar(
             radius: 50,
-                   backgroundImage: AssetImage('assets/image/Profile.jpg',),
+                   backgroundImage: AssetImage('assets/image/omnia.jpg',),
                    backgroundColor: Colors.transparent,
 
                  ),
          ),
-          Text('Antonio Renders',style: TextStyle(color: Colors.white,fontSize: 18.sp,fontWeight: FontWeight.bold),),
-          Text('@renders.antonio',style: TextStyle(color: Colors.white,fontSize: 14.sp,),)
+          Text('Omnia Mohamed',style: TextStyle(color: Colors.white,fontSize: 18.sp,fontWeight: FontWeight.bold),),
+          Text('omnia@gmail',style: TextStyle(color: Colors.white,fontSize: 14.sp,),)
         ],
       ),
     );

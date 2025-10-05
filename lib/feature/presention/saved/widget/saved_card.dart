@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/core/model/movie_model.dart';
+import 'package:get/route_manager.dart';
+import 'package:new_movie_app/core/model/movie_model.dart';
+import 'package:path/path.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../core/providers/saved_provider.dart';
 
 
 class SavedCard extends StatelessWidget {
-  const SavedCard({super.key, required this.movie});
+   SavedCard({super.key, required this.movie , });
  final Movie movie;
+ 
   @override
   Widget build(BuildContext context,) {
+    final sp = Provider.of<SavedProvider>(context);
     return Card(
       margin: EdgeInsets.all(10.0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
@@ -43,13 +50,21 @@ class SavedCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 1,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.sp,color: Colors.white),
             )),
-
+    
         Positioned(
             bottom: 20.h,
             left: 120.w,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Color(0xffE01616)) ,
                 onPressed: (){}, child: Text('Watch Now',style: TextStyle(color: Colors.white),))),
+
+        Positioned(
+          bottom:10,
+          right: 10,
+          child: IconButton(onPressed: (){
+          sp.remove(movie);
+        },
+         icon: Icon(Icons.delete,color: Colors.red),))  ,      
         Positioned(
             top: 5.h,
             right: 5.w,

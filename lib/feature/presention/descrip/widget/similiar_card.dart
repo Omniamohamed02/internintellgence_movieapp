@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/core/model/movie_model.dart';
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
+import 'package:new_movie_app/core/model/movie_model.dart';
+import 'package:new_movie_app/feature/presention/descrip/descripation_screen.dart';
 
 class  SimiliarCard extends StatelessWidget {
   final Movie movie;
@@ -19,8 +19,7 @@ class  SimiliarCard extends StatelessWidget {
           ),
         );
       },
-      child: movie.posterPath != null
-              ? ClipRRect(
+      child: ClipRRect(
             borderRadius: BorderRadius.circular(8.0.r),
             child: Image.network(
               'https://image.tmdb.org/t/p/w500${movie.posterPath}',
@@ -28,11 +27,6 @@ class  SimiliarCard extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
-          )
-              : Container(
-            height: 200.h,
-            color: Colors.grey,
-            child: const Icon(Icons.movie, size: 50),
           ),
 
 

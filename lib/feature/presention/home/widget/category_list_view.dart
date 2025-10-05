@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
-import 'package:untitled1/feature/presention/home/widget/category_card.dart';
+import 'package:new_movie_app/feature/presention/descrip/descripation_screen.dart';
+import 'package:new_movie_app/feature/presention/home/widget/category_card.dart';
 
 import '../../../../core/model/movie_model.dart';
 import '../see_more_page.dart';
@@ -10,11 +10,12 @@ import 'category_header.dart';
 class CategoryList extends StatelessWidget {
   final String title;
   final List<Movie> movies;
+ 
 
   const CategoryList({
     Key? key,
     required this.title,
-    required this.movies,
+    required this.movies, 
   }) : super(key: key);
 
   @override

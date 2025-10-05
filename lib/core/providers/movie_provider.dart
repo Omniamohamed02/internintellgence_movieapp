@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/core/model/movie_model.dart';
+import 'package:new_movie_app/core/model/movie_model.dart';
+
 import '../services/movie_service.dart';
 
 class MovieProvider with ChangeNotifier {
@@ -8,12 +9,12 @@ class MovieProvider with ChangeNotifier {
   List<Movie> popularMovies = [];
   List<Movie> topRatedMovies = [];
   List<Movie> trendingMovies = [];
-  Map<int, String> genres = {}; // Genre ID to Name mapping
-  Map<int, List<Movie>> genreMovies = {}; // Genre ID to Movies mapping
+  Map<int, String> genres = {}; 
+  Map<int, List<Movie>> genreMovies = {}; 
 
-  // Add lists for trailers and similar movies
-  Map<int, String?> movieTrailers = {}; // Movie ID to trailer URL mapping
-  Map<int, List<Movie>> similarMovies = {}; // Movie ID to similar movies mapping
+  
+  Map<int, String?> movieTrailers = {}; 
+  Map<int, List<Movie>> similarMovies = {}; 
 
   bool isLoading = true;
   String? errorMessage;
@@ -22,7 +23,7 @@ class MovieProvider with ChangeNotifier {
     fetchInitialData();
   }
 
-  /// Fetches popular, top-rated, trending movies, genres, and trailers
+  
   Future<void> fetchInitialData() async {
     isLoading = true;
     errorMessage = null;
@@ -33,7 +34,7 @@ class MovieProvider with ChangeNotifier {
       topRatedMovies = await _movieService.fetchTopRatedMovies();
       trendingMovies = await _movieService.fetchTrendingMovies();
       genres = await _movieService.fetchGenres();
-      // Fetch trailer for popular movies (or other movies if needed)
+     
       for (var movie in popularMovies) {
         await fetchTrailerForMovie(movie.id);
       }
@@ -45,9 +46,9 @@ class MovieProvider with ChangeNotifier {
     }
   }
 
-  /// Fetches movies for a specific genre and stores them in `genreMovies`
+  
   Future<void> fetchMoviesForGenre(int genreId) async {
-    if (genreMovies.containsKey(genreId)) return; // Avoid duplicate fetches
+    if (genreMovies.containsKey(genreId)) return; 
 
     try {
       final movies = await _movieService.fetchMoviesByGenre(genreId: genreId);
@@ -58,7 +59,7 @@ class MovieProvider with ChangeNotifier {
     }
   }
 
-  /// Refresh a specific genre if needed
+  
   Future<void> refreshMoviesForGenre(int genreId) async {
     try {
       final movies = await _movieService.fetchMoviesByGenre(genreId: genreId);
@@ -69,7 +70,7 @@ class MovieProvider with ChangeNotifier {
     }
   }
 
-  /// Fetch trailer for a specific movie
+  
   Future<void> fetchTrailerForMovie(int movieId) async {
     try {
       final trailerUrl = await _movieService.fetchMovieTrailer(movieId);
@@ -80,9 +81,9 @@ class MovieProvider with ChangeNotifier {
     }
   }
 
-  /// Fetch similar movies for a specific movie
+  
   Future<void> fetchSimilarMovies(int movieId) async {
-    if (similarMovies.containsKey(movieId)) return; // Avoid duplicate fetches
+    if (similarMovies.containsKey(movieId)) return; 
 
     try {
       final movies = await _movieService.fetchSimilarMovies(movieId);
@@ -97,7 +98,7 @@ class MovieProvider with ChangeNotifier {
   bool isSearching = false;
   String? searchError;
 
-  // Search for movies
+  
   Future<void> searchMovies(String query) async {
     isSearching = true;
     searchError = null;
@@ -112,4 +113,17 @@ class MovieProvider with ChangeNotifier {
       notifyListeners();
     }
   }
+  Movie? _currentMovie;
+
+Movie? get currentMovie => _currentMovie;
+
+void setCurrentMovie(Movie movie) {
+  _currentMovie = movie;
+  notifyListeners();
+}
+
+void clearCurrentMovie() {
+  _currentMovie = null;
+  notifyListeners();
+}
 }

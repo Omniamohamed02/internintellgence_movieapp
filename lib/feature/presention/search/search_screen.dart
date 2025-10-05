@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/home/widget/category_list_view.dart';
-import 'package:untitled1/feature/presention/search/widget/custom_category.dart';
-import 'package:untitled1/feature/presention/search/widget/custom_recomended.dart';
+import 'package:new_movie_app/feature/presention/home/widget/category_list_view.dart';
+ 
+import 'package:new_movie_app/feature/presention/search/widget/custom_recomended.dart';
 
 import '../../../core/providers/movie_provider.dart';
 

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/auth/login_screen.dart';
-
 import '../../../../core/model/movie_model.dart';
 import '../../../../core/providers/downloaded_provider.dart';
 

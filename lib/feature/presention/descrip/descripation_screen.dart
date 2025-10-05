@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-
-import 'package:untitled1/feature/presention/descrip/widget/custom_image.dart';
-import 'package:untitled1/feature/presention/descrip/widget/tabbar/custom_tabs.dart';
-import 'package:untitled1/feature/presention/descrip/widget/movie_descripation.dart';
-import 'package:untitled1/feature/presention/descrip/widget/movie_name.dart';
-import 'package:untitled1/feature/presention/descrip/widget/row_buttons.dart';
-
+import 'package:new_movie_app/feature/presention/descrip/widget/custom_image.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/tabbar/custom_tabs.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/movie_descripation.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/movie_name.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/row_buttons.dart';
 import '../../../core/model/movie_model.dart';
-import '../../../core/providers/downloaded_provider.dart';
 import '../../../core/providers/movie_provider.dart';
 import '../../../core/providers/saved_provider.dart';
 
 class DescripationScreen extends StatefulWidget {
-  DescripationScreen({super.key, required this.movie});
+  const DescripationScreen({super.key, required this.movie});
   final Movie movie;
+
   @override
   State<DescripationScreen> createState() => _DescripationScreenState();
 }
@@ -30,28 +28,39 @@ class _DescripationScreenState extends State<DescripationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final dp = Provider.of<DownloadedProvider>(context);
-    final sd = Provider.of<SavedProvider>(context);
+    final savedProvider = Provider.of<SavedProvider>(context);
 
     return Scaffold(
-      backgroundColor: Color(0xFF070F2B),
-      body: ListView(
-        children: [
-          CustomImage( posterPath: widget.movie.posterPath,
-            onSaveMovie: ()  {
-            sd.add(widget.movie);
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Movie Saved!')),
-            );
-          },
+      backgroundColor: const Color(0xFF070F2B),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: CustomImage(
+              posterPath: widget.movie.posterPath,
+              onSaveMovie: () {
+                savedProvider.add(widget.movie);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Movie Saved!')),
+                );
+              },
+            ),
           ),
-          MovieName( title: widget.movie.title, releaseDate: widget.movie.releaseDate,),
-          RowButtons(movie: widget.movie ),
-          MovieDescription(description: widget.movie.description, ),
-          Container(
-            height:1000.h,
-            // height: MediaQuery.of(context).size.height * 0.7,
-            width: double.infinity,
+          SliverToBoxAdapter(
+            child: MovieName(
+              title: widget.movie.title,
+              releaseDate: widget.movie.releaseDate,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: RowButtons(movie: widget.movie),
+          ),
+          SliverToBoxAdapter(
+            child: MovieDescription(
+              description: widget.movie.description,
+            ),
+          ),
+          SliverFillRemaining(
+            hasScrollBody: true,
             child: CustomTabs(movie: widget.movie),
           ),
         ],

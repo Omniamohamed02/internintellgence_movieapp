@@ -28,17 +28,17 @@ class Movie {
     }
 
     return Movie(
-      id: json['id'] ?? 0, // Default to 0 if id is null
+      id: json['id'] ?? 0, 
       title: json['title'] ?? 'Unknown',
       posterPath: json['poster_path'] ?? '',
       description: json['overview'] ??
-          'No description available', // Default description if null
+          'No description available', 
       releaseDate: json['release_date'] ??
-          'Unknown', // Default to 'Unknown' if releaseDate is null
+          'Unknown', 
       rating: (json['vote_average'] as num?)?.toDouble() ??
-          0.0, // Default to 0.0 if rating is null
-      genres: genresList, // Assigning genres list
-      runtime: json['runtime'], // runtime is optional
+          0.0, 
+      genres: genresList, 
+      runtime: json['runtime'], 
     );
   }
 }

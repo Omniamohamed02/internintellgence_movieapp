@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/model/movie_model.dart';
 import '../../../../core/providers/movie_provider.dart';
 
-import 'package:provider/provider.dart';
+// provider import not needed in this view model
 
 class MovieViewModel extends ChangeNotifier {
   final MovieProvider movieProvider;
@@ -18,6 +18,6 @@ class MovieViewModel extends ChangeNotifier {
   }
 
   String getDescription(Movie movie) {
-    return movie.description?.isNotEmpty == true ? movie.description! : 'No description available.';
+    return movie.description.isNotEmpty ? movie.description : 'No description available.';
   }
 }

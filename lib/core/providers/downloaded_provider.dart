@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/core/model/movie_model.dart';
-import 'package:untitled1/core/providers/movie_provider.dart';
+import 'package:new_movie_app/core/model/movie_model.dart';
+import 'package:new_movie_app/core/providers/movie_provider.dart';
 
 class DownloadedProvider extends ChangeNotifier {
   List<Movie> downloadedMovie = [];
@@ -21,13 +21,13 @@ class DownloadedProvider extends ChangeNotifier {
     return downloadedMovie.length;
   }
 
-  /// Get recommended movies based on downloaded movies
+
   Future<List<Movie>> getRecommendedMovies(MovieProvider movieProvider) async {
     Set<Movie> recommendations = {};
 
     for (Movie movie in downloadedMovie) {
       if (!movieProvider.similarMovies.containsKey(movie.id)) {
-        await movieProvider.fetchSimilarMovies(movie.id); // Fetch similar movies if not already fetched
+        await movieProvider.fetchSimilarMovies(movie.id); 
       }
 
       final similarMovies = movieProvider.similarMovies[movie.id];
@@ -36,6 +36,6 @@ class DownloadedProvider extends ChangeNotifier {
       }
     }
 
-    return recommendations.toList(); // Convert Set to List to avoid duplicates
+    return recommendations.toList(); 
   }
 }

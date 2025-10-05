@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/descrip/widget/similiar_card.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/similiar_card.dart';
 
 import '../../../../../core/model/movie_model.dart';
 import '../../../../../core/providers/movie_provider.dart';
-import '../../view_model/movie_view_model.dart';
-import '../similiar.dart';
+ 
 
 class SimilarTab extends StatelessWidget {
   final Movie movie;

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-
-import '../../../../core/model/movie_model.dart';
-import '../../../../core/providers/saved_provider.dart';
+// provider import removed (not used in this widget)
 
 
 class CustomImage extends StatelessWidget {
@@ -12,7 +9,7 @@ class CustomImage extends StatelessWidget {
   final VoidCallback onSaveMovie;
   @override
   Widget build(BuildContext context) {
-    final sd = Provider.of<SavedProvider>(context);
+  // saved provider usage removed here; callback handles saving
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: 5.w),
       child: Container(

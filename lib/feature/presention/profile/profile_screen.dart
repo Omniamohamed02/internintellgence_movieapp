@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled1/feature/presention/auth/login_screen.dart';
-import 'package:untitled1/feature/presention/profile/widget/custom_list_tile.dart';
-import 'package:untitled1/feature/presention/profile/widget/profile_info.dart';
+import 'package:new_movie_app/feature/presention/auth/login_screen.dart';
+import 'package:new_movie_app/feature/presention/profile/widget/custom_list_tile.dart';
+import 'package:new_movie_app/feature/presention/profile/widget/profile_info.dart';
 
 
 class ProfileScreen extends StatelessWidget {

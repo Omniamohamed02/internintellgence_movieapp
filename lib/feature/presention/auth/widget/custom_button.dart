@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/bottom_nav_bar.dart';
-import 'package:untitled1/core/model/movie_model.dart';
+
+import '../../../../bottom_nav_bar.dart';
+
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key, required this.ButtonName, });

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
+
 
 import '../../../../core/providers/movie_provider.dart';
+import '../../descrip/descripation_screen.dart';
 
 Widget GenreCard(BuildContext context, String title, int genreId) {
   final movieProvider = Provider.of<MovieProvider>(context);
-  final crossAxisCount = (MediaQuery.of(context).size.width / 120).floor();
+  // crossAxisCount unused - removed
 
 
   if (!movieProvider.genreMovies.containsKey(genreId)) {
@@ -60,21 +61,14 @@ Widget GenreCard(BuildContext context, String title, int genreId) {
               },
               child: Column(
                 children: [
-                  movie.posterPath != null
-                      ? ClipRRect(
+                  ClipRRect(
                     borderRadius: BorderRadius.circular(8.0.r),
                     child: Image.network(
                       'https://image.tmdb.org/t/p/w500${movie.posterPath}',
                       height:200.h,
                       width: 150.h,
-                      // width: double.infinity,
                       fit: BoxFit.cover,
                     ),
-                  )
-                      : Container(
-                    height: 100.h,
-                    color: Colors.grey,
-                    child: const Icon(Icons.movie, size: 50),
                   ),
         
         

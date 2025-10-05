@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/download/widget/download_card.dart';
+import 'package:new_movie_app/feature/presention/download/widget/download_card.dart';
 
 import '../../../core/providers/downloaded_provider.dart';
 
@@ -24,10 +24,10 @@ class DownloadScreen extends StatelessWidget {
               ),
             ),
           centerTitle: true,
-          actions: [
+          /*actions: [
             ElevatedButton(
               onPressed: (){
-                dp.downloadedMovie.clear();
+
               },
               child: Text(
                 "Delete",
@@ -40,7 +40,7 @@ class DownloadScreen extends StatelessWidget {
                 backgroundColor:Colors.transparent,
                 ),
               ),
-          ],
+          ],*/
         ),
 
         body: ListView.builder(

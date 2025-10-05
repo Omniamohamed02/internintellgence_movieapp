@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/feature/presention/auth/login_screen.dart';
-import 'package:untitled1/feature/presention/category_screen/category_screen.dart';
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
-
+ 
 import '../../../../core/model/movie_model.dart';
-import '../../descrip/widget/movie_descripation.dart';
+import '../../descrip/descripation_screen.dart';
 import '../../home/see_more_page.dart';
 
 Widget buildCategory(String title, List<Movie> movies, BuildContext context,) {
@@ -54,8 +51,7 @@ Widget buildCategory(String title, List<Movie> movies, BuildContext context,) {
                   padding:  EdgeInsets.symmetric(horizontal: 3.0.w),
                   child: Column(
                     children: [
-                      movie.posterPath != null
-                          ? GestureDetector(
+                      GestureDetector(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0.r),
                           child: Image.network(
@@ -74,12 +70,6 @@ Widget buildCategory(String title, List<Movie> movies, BuildContext context,) {
                               ));
 
                         } ,
-                      )
-                          : Container(
-                        width: 100.w,
-                        height: 150.h,
-                        color: Colors.grey,
-                        child: Icon(Icons.movie),
                       ),
                       // SizedBox(height:3 ),
                       Text(

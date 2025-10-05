@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
+import 'package:new_movie_app/feature/presention/descrip/descripation_screen.dart';
 
 import '../../../../core/model/movie_model.dart';
 
@@ -32,8 +32,7 @@ Widget MyCarousel(List<Movie> trendingMovies) {
                 Container(
                   height:300.h,
                   width: double.infinity,
-                  child: movie.posterPath != null
-                      ? ClipRRect(
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0.r),
                     child: Image.network(
                       'https://image.tmdb.org/t/p/w500${movie.posterPath}',
@@ -41,12 +40,6 @@ Widget MyCarousel(List<Movie> trendingMovies) {
                       width: double.infinity,
                       height: 400.h,
                     ),
-                  )
-                      : Container(
-                    width: double.infinity,
-                    height: 200.h,
-                    color: Colors.grey,
-                    child: Icon(Icons.movie, size: 50),
                   ),
                 ),
                 Positioned(

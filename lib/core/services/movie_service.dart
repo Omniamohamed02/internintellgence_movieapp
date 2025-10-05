@@ -17,22 +17,22 @@ class MovieService {
   final String _apiKey = 'a7f83543ac745e9678b3e9cadfae7685';
   final String _language = 'en-US';
 
-  // Fetch popular movies
+ 
   Future<List<Movie>> fetchPopularMovies({int page = 1}) async {
     return _fetchMovies(endpoint: '/movie/popular', page: page);
   }
 
-  // Fetch top-rated movies
+  
   Future<List<Movie>> fetchTopRatedMovies({int page = 1}) async {
     return _fetchMovies(endpoint: '/movie/top_rated', page: page);
   }
 
-  // Fetch trending movies
+  
   Future<List<Movie>> fetchTrendingMovies({int page = 1}) async {
     return _fetchMovies(endpoint: '/trending/movie/day', page: page);
   }
 
-  // General method to fetch movies
+  
   Future<List<Movie>> _fetchMovies({required String endpoint, int page = 1}) async {
     try {
       final response = await _dio.get(
@@ -56,7 +56,7 @@ class MovieService {
     }
   }
 
-  // Fetch genres
+  
   Future<Map<int, String>> fetchGenres() async {
     try {
       final response = await _dio.get(
@@ -81,7 +81,7 @@ class MovieService {
     }
   }
 
-  // Fetch movies by genre
+  
   Future<List<Movie>> fetchMoviesByGenre({required int genreId, int page = 1}) async {
     try {
       final response = await _dio.get(
@@ -107,7 +107,7 @@ class MovieService {
     }
   }
 
-  // Fetch trailer for a movie
+  
   Future<String?> fetchMovieTrailer(int movieId) async {
     try {
       final response = await _dio.get(
@@ -123,7 +123,7 @@ class MovieService {
         return null;
       }
 
-      // Filter for a YouTube trailer
+     
       final trailer = results.firstWhere(
             (video) => video['type'] == 'Trailer' && video['site'] == 'YouTube',
         orElse: () => null,
@@ -136,7 +136,7 @@ class MovieService {
     }
   }
 
-  // Fetch similar movies for a movie
+  
   Future<List<Movie>> fetchSimilarMovies(int movieId, {int page = 1}) async {
     try {
       final response = await _dio.get(
@@ -162,7 +162,7 @@ class MovieService {
   }
 
 
-  // Fetch movies by search query
+  
   Future<List<Movie>> searchMovies(String query, {int page = 1}) async {
     try {
       final response = await _dio.get(
@@ -172,7 +172,7 @@ class MovieService {
           'language': _language,
           'query': query,
           'page': page,
-          'include_adult': false, // Avoid adult content unless needed
+          'include_adult': false, 
         },
       );
 

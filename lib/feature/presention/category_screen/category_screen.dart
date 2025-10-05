@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:new_movie_app/feature/presention/category_screen/widget/genre_card.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/category_screen/widget/genre_card.dart';
-import 'package:untitled1/feature/presention/saved/widget/saved_card.dart';
 
-import '../../../core/model/movie_model.dart';
+
+ 
 import '../../../core/providers/movie_provider.dart';
 
 class CategoryScreen extends StatelessWidget {

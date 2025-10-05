@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/feature/presention/descrip/descripation_screen.dart';
+import 'package:new_movie_app/feature/presention/descrip/descripation_screen.dart';
 import '../../../../core/model/movie_model.dart';
 import '../../../../core/providers/downloaded_provider.dart';
 import '../../../../core/providers/movie_provider.dart';
@@ -93,8 +93,7 @@ class CustomRecommended extends StatelessWidget {
                     padding:  EdgeInsets.symmetric(horizontal: 3.0.w),
                     child: Column(
                       children: [
-                        movie.posterPath != null
-                            ? GestureDetector(
+                        GestureDetector(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0.r),
                             child: Image.network(
@@ -112,12 +111,6 @@ class CustomRecommended extends StatelessWidget {
                               ),
                             );
                           },
-                        )
-                            : Container(
-                          width: 100.w,
-                          height: 150.h,
-                          color: Colors.grey,
-                          child: const Icon(Icons.movie),
                         ),
                         Text(
                           movie.title,

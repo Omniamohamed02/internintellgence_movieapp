@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/model/movie_model.dart';
-import '../../../../core/providers/movie_provider.dart';
+ 
 
 class EpsiodeCard extends StatelessWidget {
   const EpsiodeCard({super.key, required this.movie, this.url});

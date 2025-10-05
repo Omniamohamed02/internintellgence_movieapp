@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled1/core/model/movie_model.dart';
-import 'package:untitled1/core/util/string.dart';
-import 'package:untitled1/feature/presention/home/widget/category_button.dart';
-import 'package:untitled1/feature/presention/home/widget/category_row.dart';
-import 'package:untitled1/feature/presention/home/widget/mycarousel.dart';
-import 'package:untitled1/feature/presention/home/widget/category_list_view.dart';
+ 
+import 'package:new_movie_app/feature/presention/home/widget/category_row.dart';
+import 'package:new_movie_app/feature/presention/home/widget/mycarousel.dart';
+import 'package:new_movie_app/feature/presention/home/widget/category_list_view.dart';
 
 import '../../../core/providers/movie_provider.dart';
-import '../search/widget/custom_category.dart';
+ 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -48,7 +46,7 @@ class HomeScreen extends StatelessWidget {
           ),
           SizedBox(height: 10.h),
          CategoryRow(),
-          CategoryList(title: 'Popular Movies', movies: movieProvider.popularMovies ),
+          CategoryList(title: 'Popular Movies', movies: movieProvider.popularMovies, ),
           CategoryList(title: 'Top Rated Movies', movies: movieProvider.topRatedMovies ),
           CategoryList(title: 'Trending Movies', movies: movieProvider.trendingMovies )
 

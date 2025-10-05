@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:untitled1/core/model/movie_model.dart';
-import 'package:untitled1/feature/presention/download/download_screen.dart';
-import 'package:untitled1/feature/presention/home/home_screen.dart';
-import 'package:untitled1/feature/presention/profile/profile_screen.dart';
-import 'package:untitled1/feature/presention/saved/saved_screen.dart';
-import 'package:untitled1/feature/presention/search/search_screen.dart';
+import 'package:new_movie_app/feature/presention/download/download_screen.dart';
+import 'package:new_movie_app/feature/presention/home/home_screen.dart';
+import 'package:new_movie_app/feature/presention/profile/profile_screen.dart';
+import 'package:new_movie_app/feature/presention/saved/saved_screen.dart';
+import 'package:new_movie_app/feature/presention/search/search_screen.dart';
+
 
 class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({super.key, });

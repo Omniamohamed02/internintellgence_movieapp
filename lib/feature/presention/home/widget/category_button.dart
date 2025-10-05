@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/feature/presention/category_screen/category_screen.dart';
+import 'package:new_movie_app/feature/presention/category_screen/category_screen.dart';
 
 Widget CategoryButton(final onPrssed,lable,BuildContext context,genreId){
   return Padding(

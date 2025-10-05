@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/feature/presention/descrip/widget/about.dart';
-import 'package:untitled1/feature/presention/descrip/widget/epsiode_card.dart';
-import 'package:untitled1/feature/presention/descrip/widget/similiar.dart';
-import 'package:untitled1/feature/presention/descrip/widget/tabbar/epsiode.dart';
-import 'package:untitled1/feature/presention/descrip/widget/tabbar/review_tab.dart';
-import 'package:untitled1/feature/presention/descrip/widget/tabbar/similiar_tab.dart';
-
+import 'package:new_movie_app/feature/presention/descrip/widget/tabbar/epsiode.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/tabbar/review_tab.dart';
+import 'package:new_movie_app/feature/presention/descrip/widget/tabbar/similiar_tab.dart';
 import '../../../../../core/model/movie_model.dart';
 
 class CustomTabs extends StatefulWidget {
@@ -15,7 +11,6 @@ class CustomTabs extends StatefulWidget {
 
   @override
   _CustomTabsState createState() => _CustomTabsState();
-
 }
 
 class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateMixin {
@@ -24,7 +19,6 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-
     _tabController = TabController(length: 3, vsync: this);
   }
 
@@ -37,30 +31,25 @@ class _CustomTabsState extends State<CustomTabs> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  Color(0xFF070F2B),
+      backgroundColor: const Color(0xFF070F2B),
       body: Column(
         children: [
-            TabBar(
-              controller: _tabController,
-              labelColor: Color(0xffE01616),
-              unselectedLabelColor: Colors.white70,
-              tabs: const <Widget>[
-                Tab(text: 'Episode'),
-                Tab(text: 'Similiar'),
-                Tab(text: 'Review'),
-              ],
-            ),
-      
-          Container(
-            height:1000.h,
-            // height: MediaQuery.of(context).size.height * 0.7,
-            width: double.infinity,
-            color:  Color(0xFF070F2B),
+          TabBar(
+            controller: _tabController,
+            labelColor: const Color(0xffE01616),
+            unselectedLabelColor: Colors.white70,
+            tabs: const [
+              Tab(text: 'Trailer'),
+              Tab(text: 'Similiar'),
+              Tab(text: 'Review'),
+            ],
+          ),
+          Expanded(
             child: TabBarView(
               controller: _tabController,
-              children:  [
-                EpisodeTab(movie: widget.movie,),
-               SimilarTab(movie: widget.movie),
+              children: [
+                EpisodeTab(movie: widget.movie),
+                SimilarTab(movie: widget.movie),
                 ReviewsPage(),
               ],
             ),

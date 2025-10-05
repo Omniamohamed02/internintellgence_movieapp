@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:untitled1/feature/presention/auth/widget/custom_icons_button.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/custom_icons_button.dart';
+
 
 class CustomRowButtons extends StatelessWidget {
   const CustomRowButtons({super.key});

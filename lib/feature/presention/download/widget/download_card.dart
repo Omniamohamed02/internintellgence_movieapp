@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/model/movie_model.dart';
+import '../../../../core/providers/downloaded_provider.dart';
+import '../../../../core/providers/saved_provider.dart';
 
 
 class DownloadCard extends StatelessWidget {
@@ -9,6 +12,7 @@ class DownloadCard extends StatelessWidget {
   final Movie movie;
   @override
   Widget build(BuildContext context) {
+     final dp=Provider.of<DownloadedProvider>(context);
     return Card(
       color:  Color(0xff222831),
       margin: EdgeInsets.all(10.0.r),
@@ -53,9 +57,17 @@ class DownloadCard extends StatelessWidget {
            bottom: 20.h,
              left: 120.w,
              child:
-             Text('Rating: ${movie.rating}',style: TextStyle(color: Colors.white),),
+             Text('Rating: ${movie.rating}',style: TextStyle(color: Colors.white),)),
+        
+         Positioned(
+          bottom: 10,
+          right: 10,
+          child: IconButton(onPressed: (){
+         dp.remove(movie);
 
-           ),
+        },
+         icon: Icon(Icons.delete,color: Colors.red,)))  ,    
+
         Positioned(
           top: 5.h,
             right: 5.w,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart'; // تأكد من استيراد مكتبة Dio
+import 'package:dio/dio.dart'; 
 
 class MyApiCallWidget extends StatefulWidget {
   @override
@@ -7,24 +7,23 @@ class MyApiCallWidget extends StatefulWidget {
 }
 
 class _MyApiCallWidgetState extends State<MyApiCallWidget> {
-  late Dio _dio; // تعريف Dio
+  late Dio _dio; 
 
   @override
   void initState() {
     super.initState();
-    _dio = Dio(); // تهيئة Dio
-    fetchData(); // استدعاء الدالة لجلب البيانات
+    _dio = Dio(); 
+    fetchData();
   }
 
-  // دالة جلب البيانات من API
+  
   Future<void> fetchData() async {
     try {
       final response = await _dio.get('https://api.themoviedb.org/3/discover/movie?api_key=a7f83543ac745e9678b3e9cadfae7685&language=en&with_genres=28');
-      print(response.data); // طباعة البيانات في الكونسول
-
-      // هنا ممكن تحط الكود عشان تعرض البيانات في واجهة المستخدم (UI)
+      print(response.data); 
+     
     } catch (e) {
-      print('Error: $e'); // إذا حصلت أي مشكلة في جلب البيانات
+      print('Error: $e');
     }
   }
 

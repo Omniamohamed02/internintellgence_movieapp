@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled1/feature/presention/auth/signup_screen.dart';
-import 'package:untitled1/feature/presention/auth/widget/call_to_action.dart';
-import 'package:untitled1/feature/presention/auth/widget/custom_button.dart';
-import 'package:untitled1/feature/presention/auth/widget/custom_row_buttons.dart';
-import 'package:untitled1/feature/presention/auth/widget/divider.dart';
-import 'package:untitled1/feature/presention/auth/widget/text_field.dart';
+// ScreenUtil initialized in main.dart
+import 'package:new_movie_app/feature/presention/auth/signup_screen.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/call_to_action.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/custom_button.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/custom_row_buttons.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/divider.dart';
+import 'package:new_movie_app/feature/presention/auth/widget/text_field.dart';
 
-import '../../../core/model/movie_model.dart';
+
+ 
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key,});
